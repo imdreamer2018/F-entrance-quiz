@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './StudentList.css';
+import { getAllStudents } from '../../../_services/students.service';
 
 class StudentsList extends Component {
   constructor(props) {
@@ -9,6 +10,19 @@ class StudentsList extends Component {
     };
   }
 
+  componentDidMount() {
+    getAllStudents()
+      .then(result => {
+        this.setState({
+          students: result.data
+        });
+      })
+      .catch(error => {
+        alert(error);
+      })
+
+  }
+
   render() {
     return (
       <div className="student-lists">
@@ -16,17 +30,11 @@ class StudentsList extends Component {
           学员列表
         </h2>
         <ul className="student-list">
-          <li>1.成吉思汗</li>
-          <li>1.成吉思汗</li>
-          <li>1.成吉思汗</li>
-          <li>1.成吉思汗</li>
-          <li>1.成吉思汗</li>
-          <li>1.成吉思汗</li>
-          <li>1.成吉思汗</li>
-          <li>1.成吉思汗</li>
-          <li>1.成吉思汗</li>
-          <li>1.成吉思汗</li>
-          <li>1.成吉思汗</li>
+          {
+            this.state.students.map(student => (
+              <li key={student.studentId}>{student.studentId}.{student.studentName}</li>
+            ))
+          }
         </ul>
       </div>
     );
