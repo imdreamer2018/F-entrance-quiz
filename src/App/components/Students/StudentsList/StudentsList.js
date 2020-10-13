@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './StudentList.css';
-import { getAllStudents } from '../../../_services/students.service';
+import { createStudent, getAllStudents } from '../../../_services/students.service';
 
 class StudentsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       students: [],
+      studentName: '',
     };
   }
 
@@ -23,6 +24,26 @@ class StudentsList extends Component {
 
   }
 
+  handleFiledChange = (field, event) => {
+    this.setState({
+      [field]: event.target.value,
+    });
+  };
+
+  handleSubmit = (event) => {
+    const request = {
+      'studentName': this.state.studentName,
+    };
+    createStudent(request)
+      .then(result => {
+        console.log(result);
+        alert(`添加${result.data.studentName}学员成功`);
+      })
+      .catch(error => {
+        alert(error);
+      })
+  };
+
   render() {
     return (
       <div className="student-lists">
@@ -36,8 +57,11 @@ class StudentsList extends Component {
             ))
           }
           <li id="input-student">
-            <form>
-              <input name="输入" value="+添加学员"/>
+            <form onSubmit={event => this.handleSubmit(event)}>
+              <input
+                placeholder="+ 添加学员"
+                defaultValue={this.state.studentName}
+                onChange={event => this.handleFiledChange("studentName", event)}/>
             </form>
           </li>
 
