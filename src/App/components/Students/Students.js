@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import StudentsList from './StudentsList/StudentsList';
 import './Students.css';
+import GroupList from './GroupList/GroupList';
 
 class Students extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class Students extends Component {
   render() {
     return (
       <div id="students">
+        <GroupList/>
         <StudentsList/>
       </div>
     );

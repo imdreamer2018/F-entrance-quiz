@@ -1,0 +1,52 @@
+.groups-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.groups-header h2 {
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.groups-header button{
+    margin-top: 15px;
+    margin-right: 20px;
+    background-color: #ea5455;
+    border: none;
+    color: white;
+    width: 100px;
+    height: 30px;
+}
+
+/*.group {*/
+/*    border: 2px solid lightgray;*/
+/*}*/
+
+.group-name {
+    background-color: #929aab;
+    color: white;
+    text-align: center;
+}
+
+.group-list {
+    display: flex;
+}
+
+.group-student-list {
+    padding: 0;
+    margin-top: 0;
+}
+
+.group-student-list li {
+    padding-top: 10px;
+    text-align: center;
+    margin-left: 15px;
+    background-color: #eeeeee;
+    float:left;
+    width: 80px;
+    height: 30px;
+    list-style:none;
+
+}
+
