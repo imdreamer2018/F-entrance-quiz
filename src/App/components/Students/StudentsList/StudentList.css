@@ -1,12 +1,19 @@
-.student-list {
+.student-lists {
     width: 800px;
+    background-color: #f7f7f7;
 }
 
-.student-list ul {
+.student-lists h2{
+    margin-left: 10px;
+    padding-top: 10px
+}
+
+.student-list {
     padding: 0;
+    height: 120px;
 }
 
-.student-list ul li {
+.student-list li {
     padding-top: 10px;
     text-align: center;
     margin-left: 15px;
@@ -16,7 +23,5 @@
     width: 80px;
     height: 30px;
     list-style:none;
-    display:block;
-    white-space: nowrap;
 
 }

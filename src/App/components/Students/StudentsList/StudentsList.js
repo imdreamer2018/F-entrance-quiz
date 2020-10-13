@@ -11,25 +11,23 @@ class StudentsList extends Component {
 
   render() {
     return (
-      <div>
-        <h3>
+      <div className="student-lists">
+        <h2>
           学员列表
-        </h3>
-        <div className="student-list">
-          <ul>
-            <li>1.成吉思汗</li>
-            <li>1.成吉思汗</li>
-            <li>1.成吉思汗</li>
-            <li>1.成吉思汗</li>
-            <li>1.成吉思汗</li>
-            <li>1.成吉思汗</li>
-            <li>1.成吉思汗</li>
-            <li>1.成吉思汗</li>
-            <li>1.成吉思汗</li>
-            <li>1.成吉思汗</li>
-            <li>1.成吉思汗</li>
-          </ul>
-        </div>
+        </h2>
+        <ul className="student-list">
+          <li>1.成吉思汗</li>
+          <li>1.成吉思汗</li>
+          <li>1.成吉思汗</li>
+          <li>1.成吉思汗</li>
+          <li>1.成吉思汗</li>
+          <li>1.成吉思汗</li>
+          <li>1.成吉思汗</li>
+          <li>1.成吉思汗</li>
+          <li>1.成吉思汗</li>
+          <li>1.成吉思汗</li>
+          <li>1.成吉思汗</li>
+        </ul>
       </div>
     );
   }
