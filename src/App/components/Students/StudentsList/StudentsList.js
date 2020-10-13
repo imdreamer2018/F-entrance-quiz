@@ -36,11 +36,10 @@ class StudentsList extends Component {
     };
     createStudent(request)
       .then(result => {
-        console.log(result);
         alert(`添加${result.data.studentName}学员成功`);
       })
       .catch(error => {
-        alert(error);
+        console.log(error);
       })
   };
 
