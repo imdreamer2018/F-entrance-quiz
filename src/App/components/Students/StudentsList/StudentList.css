@@ -25,3 +25,19 @@
     list-style:none;
 
 }
+
+#input-student {
+    margin-top: 10px;
+    border: 1px solid #eeeeee;
+    background-color: #f7f7f7;
+    height: 30px;
+}
+
+#input-student input {
+    margin-left: 5px;
+    border-style:none;
+    background-color: #f7f7f7;
+    width: 80px;
+    height: 20px;
+}
+

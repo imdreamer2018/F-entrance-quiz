@@ -35,6 +35,12 @@ class StudentsList extends Component {
               <li key={student.studentId}>{student.studentId}.{student.studentName}</li>
             ))
           }
+          <li id="input-student">
+            <form>
+              <input name="输入" value="+添加学员"/>
+            </form>
+          </li>
+
         </ul>
       </div>
     );
