@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import StudentsList from './StudentsList/StudentsList';
+import './Students.css';
 
 class Students extends Component {
   constructor(props) {
@@ -8,7 +10,9 @@ class Students extends Component {
 
   render() {
     return (
-      <div></div>
+      <div id="students">
+        <StudentsList/>
+      </div>
     );
   }
 }
