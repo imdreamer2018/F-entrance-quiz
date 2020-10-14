@@ -14,7 +14,7 @@ class GroupList extends Component {
     getGroupingStudents()
       .then(result => {
         this.setState({
-          groups: result.data
+          groups: result
         })
       })
       .catch(error => {
@@ -26,7 +26,7 @@ class GroupList extends Component {
     groupingStudents()
       .then(result => {
         this.setState({
-          groups: result.data
+          groups: result
         })
       })
       .catch(error => {
@@ -45,14 +45,14 @@ class GroupList extends Component {
         </div>
         {
           this.state.groups.map(group => (
-            <div key={group.groupId} className="group">
-              <h2 key={group.groupId} className="group-name">
-                {group.groupId} 组
+            <div key={group.id} className="group">
+              <h2 key={group.id} className="group-name">
+                {group.name}
               </h2>
               <div className="group-list">
-                {group.groupList.map(student => (
-                  <ul key={student.studentId} className="group-student-list">
-                    <li key={student.studentId}>{student.studentId}.{student.studentName}</li>
+                {group.studentList.map(student => (
+                  <ul key={student.id} className="group-student-list">
+                    <li key={student.id}>{student.id}.{student.name}</li>
                   </ul>
                 ))}
               </div>

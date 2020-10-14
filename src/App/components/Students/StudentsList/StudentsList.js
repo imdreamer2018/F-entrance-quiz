@@ -15,7 +15,7 @@ class StudentsList extends Component {
     getAllStudents()
       .then(result => {
         this.setState({
-          students: result.data
+          students: result
         });
       })
       .catch(error => {
@@ -32,7 +32,7 @@ class StudentsList extends Component {
 
   handleSubmit = (event) => {
     const request = {
-      'studentName': this.state.studentName,
+      'name': this.state.studentName,
     };
     createStudent(request)
       .then(result => {
@@ -52,14 +52,14 @@ class StudentsList extends Component {
         <ul className="student-list">
           {
             this.state.students.map(student => (
-              <li key={student.studentId}>{student.studentId}.{student.studentName}</li>
+              <li key={student.id}>{student.id}.{student.name}</li>
             ))
           }
           <li id="input-student">
             <form onSubmit={event => this.handleSubmit(event)}>
               <input
                 placeholder="+ 添加学员"
-                defaultValue={this.state.studentName}
+                defaultValue={this.state.name}
                 onChange={event => this.handleFiledChange("studentName", event)}/>
             </form>
           </li>

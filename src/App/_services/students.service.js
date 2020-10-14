@@ -38,7 +38,7 @@ export function getGroupingStudents() {
       'Cache': 'no-cache'
     },
   };
-  return fetch(`http://127.0.0.1:8080/students/group`, requestOptions).then(handleResponse);
+  return fetch(`http://127.0.0.1:8080/groups`, requestOptions).then(handleResponse);
 }
 
 export function groupingStudents() {
@@ -50,5 +50,5 @@ export function groupingStudents() {
       'Cache': 'no-cache'
     },
   };
-  return fetch(`http://127.0.0.1:8080/students/group`, requestOptions).then(handleResponse);
+  return fetch(`http://127.0.0.1:8080/groups`, requestOptions).then(handleResponse);
 }
