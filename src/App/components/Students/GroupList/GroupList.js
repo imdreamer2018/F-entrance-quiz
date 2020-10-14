@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getGroupingStudents } from '../../../_services/students.service';
+import { getGroupingStudents, groupingStudents } from '../../../_services/students.service';
 import './GroupList.css';
 
 class GroupList extends Component {
@@ -10,10 +10,21 @@ class GroupList extends Component {
     };
   }
 
-  handleGroupingStudent = () => {
+  componentDidMount() {
     getGroupingStudents()
       .then(result => {
-        console.log(result);
+        this.setState({
+          groups: result.data
+        })
+      })
+      .catch(error => {
+        alert(error);
+      })
+  }
+
+  handleGroupingStudent = () => {
+    groupingStudents()
+      .then(result => {
         this.setState({
           groups: result.data
         })
@@ -30,7 +41,7 @@ class GroupList extends Component {
         <h2>
           分组列表
         </h2>
-        <button onClick={this.handleGroupingStudent}>分组学员</button>
+        <button type="button" onClick={this.handleGroupingStudent}>分组学员</button>
         </div>
         {
           this.state.groups.map(group => (
