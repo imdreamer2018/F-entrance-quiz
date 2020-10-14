@@ -40,3 +40,15 @@ export function getGroupingStudents() {
   };
   return fetch(`http://127.0.0.1:8080/students/group`, requestOptions).then(handleResponse);
 }
+
+export function groupingStudents() {
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json;charset=UTF-8',
+      'Content-Type': 'application/json',
+      'Cache': 'no-cache'
+    },
+  };
+  return fetch(`http://127.0.0.1:8080/students/group`, requestOptions).then(handleResponse);
+}
