@@ -5,6 +5,7 @@ import { createStudent, getAllStudents } from '../../../_services/students.servi
 class StudentsList extends Component {
   constructor(props) {
     super(props);
+    // TODO feedback: studentName值不需要存储在state中，同步到后台数据就可以了
     this.state = {
       students: [],
       studentName: '',
@@ -24,6 +25,7 @@ class StudentsList extends Component {
 
   }
 
+  // TODO feedback: handleFiledChange命名不表意
   handleFiledChange = (field, event) => {
     this.setState({
       [field]: event.target.value,
@@ -36,6 +38,7 @@ class StudentsList extends Component {
     };
     createStudent(request)
       .then(result => {
+        // TODO feedback: 需求里没有alert
         alert(`添加${result.data.studentName}学员成功`);
       })
       .catch(error => {
@@ -56,6 +59,7 @@ class StudentsList extends Component {
             ))
           }
           <li id="input-student">
+            {/*// TODO feedback:不需要添加form*/}
             <form onSubmit={event => this.handleSubmit(event)}>
               <input
                 placeholder="+ 添加学员"
